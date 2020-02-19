@@ -25,8 +25,8 @@ accomplished by running the command `pip3 install --user python-chess`.
 3. Open and skim through `baby_driver.py` and `eval_func.py`. You don't need to
 understand all of their inner workings, but reading through the comments may
 help you to understand what to do down the line.
-4. Within `eval_func.py`, define some more evaluation functions using the same
-format as the provided example. The `python-chess` package has been imported for
+4. Within `eval_func.py`, define another evaluation function using the same
+format as the provided examples. The `python-chess` package has been imported for
 you already, but if you want to use anything else you're welcome to.
 5. At the top of `baby_driver.py`, make sure to import any functions you created
 within `eval_func.py` so that you can use them.

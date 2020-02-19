@@ -8,7 +8,8 @@
 # imports
 import chess
 import random
-from eval_funcs import test_eval, eval_countpieces#TODO(y'all): add any new evaluation functions
+#TODO(y'all): import any new evaluation functions on the line below
+from eval_funcs import test_eval, eval_countpieces, eval_weightpieces
 
 # minimax() runs an iteration of minimax-ab with the specified max depth
 # @param depth          set to the maximum depth we want to evaluate, decreases
@@ -127,12 +128,12 @@ def main():
     # play an example game
     results = []
     for i in range(10):
-        results.append(play_game(eval_countpieces, 10, eval_countpieces, 1))
+        results.append(play_game(eval_countpieces, 3, eval_weightpieces, 3))
     print(results)
     #TODO(y'all):   Run some tests on a combination of evaluation complexity and
     #               search depth to determine what their effects are. You can
     #               run those games and collect those results here. An example
-    #               game is demonstrated above.
+    #               loop to run games is demonstrated above.
 
 # python is a dirty language and this is necessary
 if __name__ == "__main__":
