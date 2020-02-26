@@ -25,7 +25,11 @@ from eval_funcs import test_eval, eval_countpieces, eval_weightpieces
 #                       respective move.
 def minimax(depth, board, alpha, beta, is_maximizing, eval_func):
     # end the recursion if this is the maximum depth we want to reach
-    if(depth == 0):
+    if depth == 0:
+        if board.result() == "1-0":
+            return float("inf", board.peek())
+        if board.result() == "0-1":
+            return (float("-inf"), board.peek)
         return (-eval_func(board), board.peek())
 
     # populate the possible moves that can be made from the current board state
@@ -37,7 +41,7 @@ def minimax(depth, board, alpha, beta, is_maximizing, eval_func):
     random.shuffle(possible_moves)
 
     # if we're the maximizing player
-    if(is_maximizing):
+    if is_maximizing:
         # track the current best move. start with the worst move imaginable.
         best_score = float("-inf")
         best_move = None
