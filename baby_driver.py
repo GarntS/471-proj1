@@ -27,9 +27,9 @@ def minimax(depth, board, alpha, beta, is_maximizing, eval_func):
     # end the recursion if this is the maximum depth we want to reach
     if depth == 0:
         if board.result() == "1-0":
-            return float("inf", board.peek())
+            return (float("inf"), board.peek())
         if board.result() == "0-1":
-            return (float("-inf"), board.peek)
+            return (float("-inf"), board.peek())
         return (-eval_func(board), board.peek())
 
     # populate the possible moves that can be made from the current board state
