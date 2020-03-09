@@ -100,7 +100,7 @@ def eval_weightpieces(board):
         #       (square % 8) is the x-coord of a square and (square / 8) is the
         #       y-coord of a square.
         # NOTE: we divide by 5 because that's the max distance from the middle
-        dist_weight = 1 - linear_dist((square % 8, square / 8), (4.5, 4.5)) / 5
+        dist_weight = 1 - linear_dist((square % 8, square // 8), (3.5, 3.5)) / 5
         # make distance weighting a little more impactful
         dist_weight *= 2
         # if the piece is a white piece, add its value. Otherwise, subtract it.

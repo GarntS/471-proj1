@@ -30,7 +30,7 @@ def minimax(depth, board, alpha, beta, is_maximizing, eval_func):
             return (float("inf"), board.peek())
         if board.result() == "0-1":
             return (float("-inf"), board.peek())
-        return (-eval_func(board), board.peek())
+        return (eval_func(board), board.peek())
 
     # populate the possible moves that can be made from the current board state
     possible_moves = []
@@ -108,7 +108,7 @@ def play_game(white_eval, white_depth, black_eval, black_depth):
         # if it's white's turn
         if board.turn == chess.WHITE:
             # determine the best move to make via minimax-ab
-            best_pair = minimax(white_depth, board, float("inf"), float("-inf"), True, white_eval)
+            best_pair = minimax(white_depth, board, float("-inf"), float("inf"), True, white_eval)
             # make that move and pass the turn
             board.push(best_pair[1])
 
@@ -131,8 +131,8 @@ def play_game(white_eval, white_depth, black_eval, black_depth):
 def main():
     # play an example game
     results = []
-    for i in range(10):
-        results.append(play_game(eval_countpieces, 3, eval_weightpieces, 3))
+    for i in range(5):
+        results.append(play_game(eval_weightpieces, 2, eval_countpieces, 2))
     print(results)
     #TODO(y'all):   Run some tests on a combination of evaluation complexity and
     #               search depth to determine what their effects are. You can
