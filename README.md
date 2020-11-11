@@ -8,7 +8,7 @@ You'll write your own evaluation functions and choose your own search depths
 while collecting data, and summarize your findings.
 
 ### Files:
-- `README.py`
+- `README.md`
 	- this readme file
 - `baby_driver.py`
 	- the driver file containing the main method and some pre-written code to
